@@ -44,3 +44,9 @@ So I knew there was nothing wrong with that part of the code, meaning, that the 
 After rereading the documentation of that syntax **MULTIPLE** times I finally figured it out. <br>
 
 The foreach ($week as $day), was missing an '&' sign after the 'as' and before the '$day'.
+
+## Exercise 5: "Z IS NOT THE FATHER!!"
+The biggest problem here, was that =<z would result in everything up until 'zz' being printed, while <z resulted in everything up until 'y' being printed.
+After looking through the PHP documentation, I was able to find out that < and === weren't the only statements you could use in a for loop!
+So while I was reading on the different statements and trying them out, I stumbled upon the '!=' statement. 
+This finally fixed the code!
