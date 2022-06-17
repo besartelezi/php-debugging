@@ -67,3 +67,22 @@ echo substr($str, 0, 12);
 //I noticed that the “ “ symbols for the string were the wrong ones, so I replaced them with the correct ones and it started working!
 //Afterwards, I had to add " " symbols, so the result of the code would look like "Debugged!".
 //In order to achieve this, I also had to increase the length of the substr() function.
+
+
+new_exercise(4);
+// === Exercise 4 ===
+// Sometimes debugging code is just like looking up code and syntax...
+// The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
+// Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
+
+foreach($week as &$day) {
+    $day = substr($day, 0, strlen($day)-3);
+}
+print_r($week);
+
+// I don't know who made this exercise, but I wanted to say that this exercise was as evil as it was challenging.
+//The function and everything was working properly.
+//I added a var_dump() of both the $week and $day variables, and it was made clear that the $day variable was being adjusted, but the changes weren't showing in the $week variable.
+//So I knew there was nothing wrong with that part of the code, meaning, that the main suspect was the foreach loop.
+//After rereading the documentation of that syntax **MULTIPLE** times I finally figured it out. <br>
+//The foreach ($week as $day), was missing an '&' sign after the 'as' and before the '$day'.
