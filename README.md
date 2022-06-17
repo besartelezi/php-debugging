@@ -6,6 +6,13 @@ So this challenge is right up my alley. <br>
 
 So what am I waiting for? Let's squash those bugs baby (except this bug, he's cool).
 
-![The cockroach of Spongebob eating a Krabby Patty](spongebob-cockrach.gif)
+![The cockroach of Spongebob eating a Krabby Patty](images/spongebob-cockrach.gif)
 
 ## Exercise 1: "The First Step"
+The IDE itself already told me that the main issue here was that the $x was undefined, but I still wanted to try out the var_dump and see what it would tell me.
+It gave me this error:
+![alt text](images/exercise-1-error.PNG)
+
+So here it was clear that the $x was undefined, but also that the function new_exercise wasn't called.
+I added $x = "one", I called the function at the end, and then the code started working properly.
+Exercise 1 has been a great success!
