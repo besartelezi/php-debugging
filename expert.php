@@ -141,3 +141,14 @@ echo "Here is the name:" ,combineNames();
 //randomHeroName(), there are two arrays present, one is the $hero_firstnames and the second one is $hero_lastnames.
 //The $heroes variable is an array made up of both arrays.
 //the $randname variable picks two random names, the issue here is that it can result in both names being from the same array.
+
+
+new_exercise(7);
+function copyright(int $year) {
+    echo "&copy; $year BeCode";
+}
+//print the copyright
+copyright((int)date('Y'));
+
+//Added the (int) to the repeated copyright function
+//Nothing showed up on the website, I realized it's because there was a return instead of an echo.

@@ -86,6 +86,14 @@ echo "Here is the name:" ,combineNames();
 ````
 As you can see here, I replaced the '.' for a ','. <br>
 
+There's still a bug present, where the final hero name isn't made out of the first and last name, but it can sometimes be a mix of both first names or both last names.
+For now, I'll try to do the other exercises and I will come back later to fix this minor bug.
+
 Out of all the exercises, the one that made me use Xdebug the most was this one. 
 A fellow learner at BeCode helped me out and showed me what the Xdebug console on PHPStorm can do and how you should use it.
 This was extremely helpful and will definitely help me out **A LOT** in the future.
+
+## Exercise 7: "We gotta do this and we gotta do this (copy)right!"
+I Added the (int) to the repeated copyright function. 
+Then nothing showed up on the website, I realized it's because there was a return instead of an echo.
+These two changes made the code work as intended.
