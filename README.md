@@ -97,3 +97,8 @@ This was extremely helpful and will definitely help me out **A LOT** in the futu
 I Added the (int) to the repeated copyright function. 
 Then nothing showed up on the website, I realized it's because there was a return instead of an echo.
 These two changes made the code work as intended.
+
+## Exercise 8: "Pocodehontas"
+Changed the || to &&, || = OR, && = AND.
+This way, the if statement will be executed when the username AND the password match.
+Since you can return only one value, I added the "Smith" to the first string that gets returned.

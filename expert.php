@@ -152,3 +152,23 @@ copyright((int)date('Y'));
 
 //Added the (int) to the repeated copyright function
 //Nothing showed up on the website, I realized it's because there was a return instead of an echo.
+
+new_exercise(8);
+function login(string $email, string $password) {
+    if($email == 'john@example.be' && $password == 'pocahontas') {
+        return 'Welcome John Smith';
+    }
+    return 'No access';
+}
+
+//do not change anything below
+//should great the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//no access
+echo login('john@example.be', 'dfgidfgdfg');
+//no access
+echo login('wrong@example.be', 'wrong');
+//you can change things again!
+
+//Changed the || to &&, || = OR, && = AND.
+//Since you can return only one value, I added the "Smith" to the first string that gets returned.
