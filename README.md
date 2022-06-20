@@ -46,7 +46,46 @@ After rereading the documentation of that syntax **MULTIPLE** times I finally fi
 The foreach ($week as $day), was missing an '&' sign after the 'as' and before the '$day'.
 
 ## Exercise 5: "Z IS NOT THE FATHER!!"
-The biggest problem here, was that =<z would result in everything up until 'zz' being printed, while <z resulted in everything up until 'y' being printed.
+The biggest problem here, was that '=<z' would result in everything up until 'zz' being printed, while <z resulted in everything up until 'y' being printed.
 After looking through the PHP documentation, I was able to find out that < and === weren't the only statements you could use in a for loop!
 So while I was reading on the different statements and trying them out, I stumbled upon the '!=' statement. 
 This finally fixed the code!
+
+## Exercise 6: "Making This Hero Exercise Was My Villain Origin Story!"
+Now this exercise is one swole chihuahua!
+The very first step I took for this exercise, was writing down what all the different functions need to do.
+This way, the exercise will be much more understandable **and** less intimidating. <br>
+
+![evil-spongebob](images/spongebob-evil.gif)
+
+I wrote what the pieces of broken code were supposed to do in the comments of the PHP file.
+Because of this, I was able to realize that the middle piece of code didn't have a real purpose, so I deleted it.
+Using Xdebug, and some good ol' fashioned common sense, I rewrote the following code.
+
+````
+function combineNames($str1 = "", $str2 = ""){
+    $params = [$str1, $str2];
+    foreach($params as &$param) {
+        if ($param === "") {
+            $param = randomHeroName();
+        }
+    }
+    return implode("-",$params);
+}
+````
+The "-" and the $params inside the implode() were in the wrong order.
+I also replaced the 'echo' for a 'return'.
+The echo was giving me some trouble, since it wasn't saving the hero names properly.
+Replacing it with 'return' did fix this.
+For both the combineNames function, as for the randomHeroName function.
+
+````
+echo "Here is the name: " . combineNames();
+
+echo "Here is the name:" ,combineNames();
+````
+As you can see here, I replaced the '.' for a ','. <br>
+
+Out of all the exercises, the one that made me use Xdebug the most was this one. 
+A fellow learner at BeCode helped me out and showed me what the Xdebug console on PHPStorm can do and how you should use it.
+This was extremely helpful and will definitely help me out **A LOT** in the future.

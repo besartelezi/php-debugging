@@ -96,7 +96,48 @@ new_exercise(5);
 $arr = [];
 for ($letter = 'a'; $letter !='aa'; $letter++) {
     array_push($arr, $letter);
-    var_dump($letter);
 }
 
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
+
+
+
+new_exercise(6);
+// === Final exercise ===
+// The fixed code should echo the following at the bottom:
+// Here is the name: $name - $name2
+// $name variables are decided as seen in the code, fix all the bugs whilst keeping the functionality!
+$arr = [];
+
+
+function combineNames($str1 = "", $str2 = ""){
+    $params = [$str1, $str2];
+    foreach($params as &$param) {
+        if ($param === "") {
+            $param = randomHeroName();
+        }
+    }
+    return implode("-",$params);
+}
+
+
+//first off, it creates $params, which is a string of 2 variables, both called $str1 and $str2.
+//Then, the for loop for every $param variable will run, only if the current $param element is empty. (might need to add an & to for loop)
+//if the $param is an empty array, it will call the randomHeroName() function to run.
+//The echo then calls upon the implode() function, which will merge both arrays into a single string, being only kept apart a symbol of my choosing.
+
+function randomHeroName()
+{
+    $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
+    $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
+    $heroes = [$hero_firstnames, $hero_lastnames];
+    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
+    //sometimes, this one goes to 2, which will result in it trying to look for an array that doesn't exist.
+    return $randname;
+}
+
+echo "Here is the name:" ,combineNames();
+
+//randomHeroName(), there are two arrays present, one is the $hero_firstnames and the second one is $hero_lastnames.
+//The $heroes variable is an array made up of both arrays.
+//the $randname variable picks two random names, the issue here is that it can result in both names being from the same array.
