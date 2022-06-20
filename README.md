@@ -124,3 +124,18 @@ So the only logical **sus**pect, was the ==true part.
 That's why I started fiddling with it until it worked.
 
 I also added echo to all the isLinkValid functions down below.
+
+## Exercise 10: "Cars are now fruits I guess?"
+I started out by removed the '!' in front of the in_array.
+This did improve the result somehow, but still wasn't good enough.
+What happens now, is that everything that's NOT a fruit shows up.
+I fixed this, by adding an === false to the if statement, because, the function was doing the reverse of what is was intended to do.
+
+What happened afterwards, is that the loop stops at a certain point, because, the $areTheseFruits length gets adjusted.
+The loop doesn't go further than that, so, we adjust it, so it can loop until the end, filtering all the objects in the array.
+And that kids, is the story of How I Met My Working Code! <br>
+
+*Pa pa pa pa, pa pa pa pa...* <br>
+*pa pa, da da da da, da da da da da...* <br>
+
+![alt-text](images/marshall.gif)

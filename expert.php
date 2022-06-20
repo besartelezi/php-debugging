@@ -193,3 +193,26 @@ echo isLinkValid('https://google.com');
 echo isLinkValid('http://google.com');
 //VALID link
 echo isLinkValid('http://google.com/test.txt');
+
+
+new_exercise(10);
+
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+for($i=0; $i < count($areTheseFruits)+3; $i++) {
+    if(in_array($areTheseFruits[$i], $validFruits) === false) {
+        unset($areTheseFruits[$i]);
+    }
+}
+var_dump($areTheseFruits);//do not change this
+
+// I started out by removed the '!' in front of the in_array.
+//This did improve the result somehow, but still wasn't good enough.
+//What happens now, is that everything that's NOT a fruit shows up.
+//I fixed this, by adding an === false to the if statement, because, the function was doing the reverse of what is was intended to do.
+//
+//What happened afterwards, is that the loop stops at a certain point, because, the $areTheseFruits length gets adjusted.
+//The loop doesn't go further than that, so, we adjust it, so it can loop until the end, filtering all the objects in the array.
