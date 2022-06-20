@@ -102,3 +102,25 @@ These two changes made the code work as intended.
 Changed the || to &&, || = OR, && = AND.
 This way, the if statement will be executed when the username AND the password match.
 Since you can return only one value, I added the "Smith" to the first string that gets returned.
+
+## Exercise 9: "Ah-ha, I know that one"
+````
+function isLinkValid(string $link) {
+    $unacceptables = array('https:', '.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) !== false) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+````
+Instead of using == true, I used !== false. 
+After xdebugging in the console, I realized that the problem was the if-statement.
+It didn't know which one was acceptable or unacceptable.
+I was reading through the documentation of strpos(), but there wasn't any issue in the code with this.
+So the only logical **sus**pect, was the ==true part.
+That's why I started fiddling with it until it worked.
+
+I also added echo to all the isLinkValid functions down below.
